@@ -1,0 +1,10 @@
+var string="Hello how are you";
+document.write(string);
+document.write("<br>");
+var stringupp=string.toUpperCase();
+document.write(stringupp);
+document.write("<br>");
+var stringlen=string.length;
+document.write(stringlen);
+var string2=string.replace("Hello", "Madhuri");
+document.write(string2);
