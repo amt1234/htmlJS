@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="controllers/registerController.js" charset="utf-8"></script>
+
+  </head>
+<body ng-app="routerApp">
+<a ui-sref="register" ui-sref-active="active">Register Page</a>
+<a ui-sref="login" ui-sref-active="active">Login Page</a>
+
+    <ui-view></ui-view>
+
+</body>
+
+</html>

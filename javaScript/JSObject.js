@@ -15,8 +15,8 @@ document.write(orc.color);
 orc.height=7;
 document.write("<br>");
 document.write(orc.height);
-
+orc.prototype.height=6;
+document.write(orc.prototype.height);
 var hello="hello how are you...";
 
 hello.toUpperCase();
-

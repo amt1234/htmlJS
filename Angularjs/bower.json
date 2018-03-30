@@ -1,0 +1,21 @@
+{
+  "name": "Angularjs",
+  "homepage": "https://github.com/amt1234/htmlJS",
+  "authors": [
+    "amt1234 <gadugalepoonam9@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-ui-router": "^1.0.15"
+  }
+}
