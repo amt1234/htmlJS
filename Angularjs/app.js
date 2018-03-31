@@ -14,5 +14,10 @@ routerApp1.config(function($stateProvider) {
           url:'/login',
           templateUrl:'templates/Login.html',
         controller:'loginController'
-        });
+      })
+         .state('calculator',{
+           url:'/calculator',
+           templateUrl:'templates/CustomerJson.html',
+           controller:'CalculatorController'
+         });
   });
