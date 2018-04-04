@@ -1,4 +1,4 @@
-var routerApp1= angular.module('routerApp', ['ui.router']);
+var routerApp1= angular.module('routerApp', ['ui.router','ngMaterial','ngMessages']);
 
 routerApp1.config(function($stateProvider) {
 
@@ -13,11 +13,22 @@ routerApp1.config(function($stateProvider) {
         .state('login',{
           url:'/login',
           templateUrl:'templates/Login.html',
-        controller:'loginController'
+          controller:'loginController'
       })
          .state('calculator',{
            url:'/calculator',
            templateUrl:'templates/CustomerJson.html',
            controller:'CalculatorController'
+         })
+         .state('material',{
+           url:'/material',
+           templateUrl:'templates/flex.html',
+           controller:'YourController'
+         })
+         .state('flex',{
+           url:'/flex',
+           templateUrl:'templates/Flex.html',
+           controller:'flexController'
          });
+
   });
