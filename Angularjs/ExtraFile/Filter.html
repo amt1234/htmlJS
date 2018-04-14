@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>filter</title>
+    <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="Filter.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="filterExample">
+    <div ng-controller="filterFunction">
+      <input type="text" name="name" ng-model="name">
+      Hello,{{name|uppercase}}
+      <br>
+      Hello,{{name|lowercase}}
+      <br>
+      <input type="text" name="" ng-model="date1">
+      Date :{{date1|date}}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Properties</h1>
+  </md-toolbar>
+  <div layout-margin flex-gt-sm="50">
+    <md-content>
+      Manufacturer
+    </md-content>
+    <md-checkbox ng-repeat="spec in answer" | filter:"uniqueString.spec.id">
+      {{ spec.specs.manufacturer }}
+    </md-checkbox>
+  </div>
+  <div layout-margin flex-gt-sm="50">
+    <md-content>
+      Storage Size
+    </md-content>
+    <md-checkbox ng-repeat="spec in answer" | filter:"spec.id">
+      {{ spec.specs.storage }}
+    </md-checkbox>
+  </div>
+  <div layout-margin flex-gt-sm="50">
+    <md-content>
+      OS
+    </md-content>
+    <md-checkbox ng-repeat="spec in answer" | unique:"spec.id">
+      {{ spec.specs.os }}
+    </md-checkbox>
+  </div>
+  <div layout-margin flex-gt-sm="50">
+    <md-content>
+      Camera
+    </md-content>
+    <md-checkbox ng-repeat="spec in answer" | unique:"spec.id">
+      {{ spec.specs.camera }}
+    </md-checkbox>
+  </div>
+  <md-content layout-margin>
+    <md-button ng-click="toggleLeft()" class="md-accent">
+      Close this Sidenav
+    </md-button>
+  </md-content>
+</md-sidenav>
