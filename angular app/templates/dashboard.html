@@ -6,9 +6,8 @@
 <!-- <div flex-xs flex-gt-xs="70" layout="column"> -->
 <div  ng-cloak>
   <!-- <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center" ng-repeat="spec in answer"> -->
-  <md-content class="md-padding" >
-    <!-- <div flex="30" flex-offset="15" layout="column" layout="row" display-block="inline-block"> -->
-      <div flex-xs flex-gt-xs="30" layout="column" ng-repeat="spec in answer">
+  <md-content class="md-padding" flex-offset="15" >
+    <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer">
       <!-- <div flex-xs="20" flex-gt-xs="30" layout="column"> -->
       <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
         <md-card-title>
@@ -35,6 +34,6 @@
           </md-card-actions>
         </md-card-actions>
       </md-card>
-    </div>
+    </span>
   </md-content>
 </div>
