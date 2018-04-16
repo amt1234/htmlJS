@@ -1,7 +1,7 @@
+
 app.controller('dashboardController', function($scope) {
 
   console.log("CONTROLLER")
-
 
 })
 app.filter('uniqueString',function(){
