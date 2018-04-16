@@ -7,7 +7,7 @@
     <md-content>
       Manufacturer
     </md-content>
-    <md-checkbox ng-repeat="spec in answer" | filter:"uniqueString.spec.id">
+    <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'">
       {{ spec.specs.manufacturer }}
     </md-checkbox>
   </div>
@@ -15,7 +15,7 @@
     <md-content>
       Storage Size
     </md-content>
-    <md-checkbox ng-repeat="spec in answer" | filter:"spec.id">
+    <md-checkbox ng-repeat="spec in answer |  uniqueString:'storage'">
       {{ spec.specs.storage }}
     </md-checkbox>
   </div>
@@ -23,7 +23,7 @@
     <md-content>
       OS
     </md-content>
-    <md-checkbox ng-repeat="spec in answer" | unique:"spec.id">
+    <md-checkbox ng-repeat="spec in answer |  uniqueString:'os'">
       {{ spec.specs.os }}
     </md-checkbox>
   </div>
@@ -31,7 +31,7 @@
     <md-content>
       Camera
     </md-content>
-    <md-checkbox ng-repeat="spec in answer" | unique:"spec.id">
+    <md-checkbox ng-repeat="spec in answer |  uniqueString:'camera'">
       {{ spec.specs.camera }}
     </md-checkbox>
   </div>
