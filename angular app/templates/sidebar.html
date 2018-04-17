@@ -7,11 +7,13 @@
     <md-content>
       Manufacturer
     </md-content>
-    <!-- <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'" > -->
-        <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'" ng-model="option.IsIncluded" ng-checked="option.IsIncluded" >
+     <div  ng-repeat="spec in answer| uniqueString:'manufacturer'">
+    <md-checkbox  ng-checked="exists(spec.specs.manufacturer, selected)" ng-click="toggle(spec.specs.manufacturer, selected)">
       {{ spec.specs.manufacturer }}
+      <!-- <span ng-if="exists(spec.specs.manufacturer, selected)"></span> -->
     </md-checkbox>
   </div>
+</div>
   <div layout-margin flex-gt-sm="50">
     <md-content>
       Storage Size
@@ -41,13 +43,13 @@
       Close this Sidenav
     </md-button>
   </md-content>
+  <!-- <div flex="50" ng-repeat="item in items">
+                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                  {{ item }} <span ng-if="exists(item, selected)">selected</span>
+                </md-checkbox>
+              </div> -->
+              <div flex="100">
+      <h2 class="md-title">Selected Items</h2>
+      <code style="display: block; padding: 8px;">{{selected | json}}</code>
+    </div>
 </md-sidenav>
-<div ng-repeat="filter in Filters">
-        <h3 class="sort">{{filter.name}}</h3>
-        <ul class="sortoptions">
-          <li ng-repeat="option in filter.options">
-            <input type="checkbox" ng-model="option.IsIncluded" ng-checked="option.IsIncluded"> {{option.value}}
-            <span>({{option.count}})</span>
-          </li>
-        </ul>
-      </div>

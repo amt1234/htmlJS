@@ -4,7 +4,8 @@
 </div> -->
 <div  ng-cloak>
   <md-content class="md-padding" flex-offset="15" >
-    <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer">
+    <!-- <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer |dynamicFilter:'selected'" > -->
+    <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer" >
       <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" >
         <!-- <div flex="50" layout="row">
      <md-card flex ng-repeat="fruit in Fruits | dynamicFilter:Filters:this" class="product">
@@ -25,7 +26,6 @@
             </div>
           </md-card-title-media>
         </md-card-title>
-
         <md-card-actions layout="row">
           <p>
             ${{spec.price}}
