@@ -7,7 +7,8 @@
     <md-content>
       Manufacturer
     </md-content>
-    <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'">
+    <!-- <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'" > -->
+        <md-checkbox ng-repeat="spec in answer| uniqueString:'manufacturer'" ng-model="option.IsIncluded" ng-checked="option.IsIncluded" >
       {{ spec.specs.manufacturer }}
     </md-checkbox>
   </div>
@@ -41,3 +42,12 @@
     </md-button>
   </md-content>
 </md-sidenav>
+<div ng-repeat="filter in Filters">
+        <h3 class="sort">{{filter.name}}</h3>
+        <ul class="sortoptions">
+          <li ng-repeat="option in filter.options">
+            <input type="checkbox" ng-model="option.IsIncluded" ng-checked="option.IsIncluded"> {{option.value}}
+            <span>({{option.count}})</span>
+          </li>
+        </ul>
+      </div>
