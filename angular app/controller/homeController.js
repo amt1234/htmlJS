@@ -66,7 +66,7 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
 app.filter('dynamicFilter', function() {
   return function(list, selectedManufracture, selectedStorage, selectedOS, selectedCamera) {
     var dynamicfiltered = [];
-    var list2 = [];
+    var list2=[] ;
     console.log("manufacturer :", selectedManufracture);
     if ((selectedManufracture.length > 0) || (selectedStorage.length > 0) || (selectedOS.length > 0) || (selectedCamera.length > 0)) {
       for (var i = 0; i < list.length; i++) {
@@ -77,15 +77,23 @@ app.filter('dynamicFilter', function() {
           if (item.specs.manufacturer == selectedItem) {
             dynamicfiltered.push(item);
             console.log("filtered value", dynamicfiltered);
+
           }
         }
       }
-
+      console.log("dynamic filtered", dynamicfiltered);
       if (dynamicfiltered.length == 0) {
         list2 = list;
         console.log("list2 ", list2);
-      } else {
-        list2 = dynamicfiltered;
+      }
+       else {
+      for(var i=0;i<dynamicfiltered.length;i++)
+      {
+        var itm=dynamicfiltered[i];
+        console.log("itm",itm);
+        list2.push(itm);
+      }
+
       }
 
       for (var i = 0; i < list2.length; i++) {
@@ -102,8 +110,15 @@ app.filter('dynamicFilter', function() {
 
       if (dynamicfiltered.length == 0) {
         list2 = list;
-      } else {
-        list2 = dynamicfiltered;
+      }
+       else {
+         for(var i=0;i<dynamicfiltered.length;i++)
+         {
+           var itm=dynamicfiltered[i];
+           console.log("itm",itm);
+           list2.push(itm);
+         }
+        // list2 = dynamicfiltered;
       }
 
       for (var i = 0; i < list2.length; i++) {
@@ -119,8 +134,15 @@ app.filter('dynamicFilter', function() {
 
       if (dynamicfiltered.length == 0) {
         list2 = list;
-      } else {
-        list2 = dynamicfiltered;
+      }
+      else {
+        for(var i=0;i<dynamicfiltered.length;i++)
+        {
+          var itm=dynamicfiltered[i];
+          console.log("itm",itm);
+          list2.push(itm);
+        }
+        // list2 = dynamicfiltered;
       }
 
       for (var i = 0; i < list2.length; i++) {
