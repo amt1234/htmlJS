@@ -7,49 +7,52 @@
     <md-content>
       Manufacturer
     </md-content>
-     <div  ng-repeat="spec in answer| uniqueString:'manufacturer'">
-    <md-checkbox  ng-checked="exists(spec.specs.manufacturer, selected)" ng-click="toggle(spec.specs.manufacturer, selected)">
-      {{ spec.specs.manufacturer }}
-      <!-- <span ng-if="exists(spec.specs.manufacturer, selected)"></span> -->
-    </md-checkbox>
+    <div ng-repeat="spec in answer| uniqueString:'manufacturer'">
+      <md-checkbox ng-click="SwitchFuction(spec.specs.manufacturer, selectedManufracture,'manufacturer')">
+        {{ spec.specs.manufacturer }}
+      </md-checkbox>
+    </div>
   </div>
-</div>
   <div layout-margin flex-gt-sm="50">
     <md-content>
       Storage Size
     </md-content>
-    <md-checkbox ng-repeat="spec in answer |  uniqueString:'storage'">
-      {{ spec.specs.storage }}
-    </md-checkbox>
+    <div ng-repeat="spec in answer| uniqueString:'storage'">
+      <md-checkbox ng-click="SwitchFuction(spec.specs.storage, selectedStorage,'storage')">
+        {{ spec.specs.storage }}
+      </md-checkbox>
+    </div>
   </div>
   <div layout-margin flex-gt-sm="50">
     <md-content>
       OS
     </md-content>
-    <md-checkbox ng-repeat="spec in answer |  uniqueString:'os'">
-      {{ spec.specs.os }}
-    </md-checkbox>
+    <div ng-repeat="spec in answer| uniqueString:'os'">
+      <md-checkbox ng-click="SwitchFuction(spec.specs.os, selectedOS,'os')">
+        {{ spec.specs.os }}
+      </md-checkbox>
+    </div>
   </div>
   <div layout-margin flex-gt-sm="50">
     <md-content>
       Camera
     </md-content>
-    <md-checkbox ng-repeat="spec in answer |  uniqueString:'camera'">
-      {{ spec.specs.camera }}
-    </md-checkbox>
+    <div ng-repeat="spec in answer| uniqueString:'camera'">
+      <md-checkbox ng-click="SwitchFuction(spec.specs.camera, selectedCamera,'camera')">
+        {{ spec.specs.camera }}
+      </md-checkbox>
+    </div>
   </div>
   <md-content layout-margin>
     <md-button ng-click="toggleLeft()" class="md-accent">
       Close this Sidenav
     </md-button>
   </md-content>
-  <!-- <div flex="50" ng-repeat="item in items">
-                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
-                  {{ item }} <span ng-if="exists(item, selected)">selected</span>
-                </md-checkbox>
-              </div> -->
-              <div flex="100">
-      <h2 class="md-title">Selected Items</h2>
-      <code style="display: block; padding: 8px;">{{selected | json}}</code>
-    </div>
+  <div flex="100">
+    <h2 class="md-title">Selected Items</h2>
+    <code style="display: block; padding: 8px;">{{selectedManufracture | json}}</code>
+    <code style="display: block; padding: 8px;">{{selectedStorage | json}}</code>
+    <code style="display: block; padding: 8px;">{{selectedOS | json}}</code>
+    <code style="display: block; padding: 8px;">{{selectedCamera| json}}</code>
+  </div>
 </md-sidenav>

@@ -1,5 +1,4 @@
-
-app.controller('dashboardController', function($scope,$mdDialog) {
+app.controller('dashboardController', function($scope, $mdDialog) {
 
   console.log("CONTROLLER")
   $scope.imagePath = 'assets/fwdphoneimages';

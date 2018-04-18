@@ -1,40 +1,37 @@
-<!-- <div>
-  <p>dashboard</p>
-  {{answer}}
-</div> -->
-<div  ng-cloak>
-  <md-content class="md-padding" flex-offset="15" >
+<div ng-cloak>
+  <md-content class="md-padding" flex-offset="15">
     <!-- <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer |dynamicFilter:'selected'" > -->
-    <span flex-xs flex-gt-xs="300"  ng-repeat="spec in answer" >
+    <!-- <span flex-xs flex-gt-xs="300" ng-repeat="spec in answer | dynamicFilter:'selectedManufracture'"> -->
+    <span flex-xs flex-gt-xs="300" ng-repeat="spec in answer">
       <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" >
         <!-- <div flex="50" layout="row">
      <md-card flex ng-repeat="fruit in Fruits | dynamicFilter:Filters:this" class="product">
        {{fruit.name}}
      </md-card>
    </div> -->
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{spec.name}}</span>
-            <span class="md-subhead"><b> Manufacturer :</b> {{spec.specs.manufacturer}}</span>
-            <span class="md-subhead"><b> Storage :</b>Storage {{spec.specs.storage}}</span>
-            <span class="md-subhead"><b> OS :</b>OS {{spec.specs.os}}</span>
-            <span class="md-subhead"><b> Camera :</b>Camera {{spec.specs.camera}}</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-lg card-media">
-              <img src="{{spec.image.small}}">
-            </div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row">
-          <p>
-            ${{spec.price}}
-          </p>
-          <md-card-actions layout="row" layout-align="end center">
-          <md-button>   Buy Now  </md-button>
-          </md-card-actions>
-        </md-card-actions>
-      </md-card>
+  <md-card-title>
+  <md-card-title-text>
+    <span class="md-headline">{{spec.name}}</span>
+    <span class="md-subhead"><b> Manufacturer :</b> {{spec.specs.manufacturer}}</span>
+    <span class="md-subhead"><b> Storage :</b>Storage {{spec.specs.storage}}</span>
+    <span class="md-subhead"><b> OS :</b>OS {{spec.specs.os}}</span>
+    <span class="md-subhead"><b> Camera :</b>Camera {{spec.specs.camera}}</span>
+    </md-card-title-text>
+    <md-card-title-media>
+      <div class="md-media-lg card-media">
+        <img src="{{spec.image.small}}">
+      </div>
+    </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row">
+      <p>
+        ${{spec.price}}
+      </p>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button> Buy Now </md-button>
+      </md-card-actions>
+    </md-card-actions>
+    </md-card>
     </span>
   </md-content>
 </div>
