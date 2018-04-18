@@ -62,42 +62,86 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
     $state.go('dashboard');
   }
 });
+// dynamicFilter on checkbox
+app.filter('dynamicFilter', function() {
+  return function(list, selectedManufracture, selectedStorage, selectedOS, selectedCamera) {
+    var dynamicfiltered = [];
+    var list2 = [];
+    console.log("manufacturer :", selectedManufracture);
+    if ((selectedManufracture.length > 0) || (selectedStorage.length > 0) || (selectedOS.length > 0) || (selectedCamera.length > 0)) {
+      for (var i = 0; i < list.length; i++) {
+        var item = list[i];
 
-app.filter('dynamicFilter',function(){
-  return function(list,selectedManufracture){
-    var dynamicfiltered=[];
-    console.log(selectedManufracture);
-    if(selectedManufracture.length>0)
-    {
-    for(var i=0;i<list.length;i++)
-    {
-      var item=list[i];
-      for(var i=0;i<selectedManufracture.length;i++)
-      {
-        var selectedItem=selectedManufracture[i];
-         if(item.specs.manufacturer==selectedItem)
-         {
-           dynamicfiltered.push(selectedItem);
-           console.log("filtered value",dynamicfiltered);
-         }
+        for (var j = 0; j < selectedManufracture.length; j++) {
+          var selectedItem = selectedManufracture[j];
+          if (item.specs.manufacturer == selectedItem) {
+            dynamicfiltered.push(item);
+            console.log("filtered value", dynamicfiltered);
+          }
+        }
       }
 
-    }
-    }else {
+      if (dynamicfiltered.length == 0) {
+        list2 = list;
+        console.log("list2 ", list2);
+      } else {
+        list2 = dynamicfiltered;
+      }
+
+      for (var i = 0; i < list2.length; i++) {
+        console.log("list length", list2.length);
+        var item = list2[i];
+        for (var k = 0; k < selectedStorage.length; k++) {
+          var selectedItem = selectedStorage[k];
+          if (item.specs.storage == selectedItem) {
+            dynamicfiltered.push(item);
+            console.log("filtered value storage", dynamicfiltered);
+          }
+        }
+      }
+
+      if (dynamicfiltered.length == 0) {
+        list2 = list;
+      } else {
+        list2 = dynamicfiltered;
+      }
+
+      for (var i = 0; i < list2.length; i++) {
+        var item = list2[i];
+        for (var l = 0; l < selectedOS.length; l++) {
+          var selectedItem = selectedOS[l];
+          if (item.specs.os == selectedItem) {
+            dynamicfiltered.push(item);
+            console.log("filtered value os", dynamicfiltered);
+          }
+        }
+      }
+
+      if (dynamicfiltered.length == 0) {
+        list2 = list;
+      } else {
+        list2 = dynamicfiltered;
+      }
+
+      for (var i = 0; i < list2.length; i++) {
+        var item = list2[i];
+        for (var m = 0; m < selectedCamera.length; m++) {
+          var selectedItem = selectedCamera[m];
+          if (item.specs.camera == selectedItem) {
+            dynamicfiltered.push(item);
+            console.log("filtered value camera", dynamicfiltered);
+          }
+        }
+      }
+    } else {
       return list;
     }
-    // else if(!selectedStorage==null)
-    // {
-    //   dynamicfiltered.push(selectedStorage);
-    // }
-    // else if (!selectedOS==null) {
-    //   dynamicfiltered.push(selectedOS);
-    // }
-    console.log("dynamicfiltered",dynamicfiltered);
-      return dynamicfiltered;
+    console.log("dynamicfiltered", dynamicfiltered);
+    return dynamicfiltered;
   }
 
 });
+
 // filter for unique values apply on checkbox
 app.filter('uniqueString', function() {
   return function(items, keyword) {
@@ -139,20 +183,20 @@ app.filter('uniqueString', function() {
 //   console.log("filtered",list);
 //       var flag=false;
 //     }
-  //   if (i==0) {
-  //     dynamicList.push(item);
-  //   }
-  //   if(selectedManufracture==null)
-  //   {
-  //     dynamicFilter.push(selectedManufracture);
-  //   }
-  //   else if(selectedStorage)
-  //   if(item.specs[keyword]==filteredItem.specs[keyword]){
-  //     flag=true;
-  //     console.log("dynamicFilter");
-  //   }
-  //   // if (selectedManufracture == null) {
-  //   //   dynamicList.push(item);
-  //   // }
+//   if (i==0) {
+//     dynamicList.push(item);
+//   }
+//   if(selectedManufracture==null)
+//   {
+//     dynamicFilter.push(selectedManufracture);
+//   }
+//   else if(selectedStorage)
+//   if(item.specs[keyword]==filteredItem.specs[keyword]){
+//     flag=true;
+//     console.log("dynamicFilter");
+//   }
+//   // if (selectedManufracture == null) {
+//   //   dynamicList.push(item);
+//   // }
 //   }
 // });
