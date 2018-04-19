@@ -6,21 +6,19 @@ app.controller('dashboardController', function($scope, $mdDialog) {
   $scope.status = '  ';
   $scope.customFullscreen = false;
 
-  $scope.showAdvanced = function(ev,data) {
+  $scope.showAdvanced = function(event4,data) {
    $mdDialog.show({
-     locals:{dataToPass: data}, //here where we pass our data
+     locals:{item: data}, //here where we pass our data
      controller: DialogController,
      templateUrl: 'templates/dialogtemp.html',
      parent: angular.element(document.body),
-     targetEvent: ev,
+     targetEvent: event4,
      clickOutsideToClose:true
-   })
-   .then(function(answer){}, function() {
-
    });
  };
 
-function DialogController($scope, $mdDialog,dataToPass) {
-console.log('>>>>>>> '+dataToPass);
+function DialogController($scope, $mdDialog,item) {
+  $scope.data = item;
+  console.log(item);
 }
 });

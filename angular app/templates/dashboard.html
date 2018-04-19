@@ -1,7 +1,7 @@
 <div ng-cloak>
   <md-content class="md-padding" flex-offset="15">
     <span flex-xs flex-gt-xs="300" ng-repeat="spec in answer|dynamicFilter:selectedManufracture:selectedStorage:selectedOS:selectedCamera">
-      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" ng-click="showAdvanced($event,data)">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" ng-click="showAdvanced($event,spec)">
   <md-card-title>
   <md-card-title-text>
     <span class="md-headline">{{spec.name}}</span>
