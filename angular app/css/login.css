@@ -2,6 +2,9 @@ body {
   background: #eee;
   -webkit-font-smoothing: antialiased;
 }
+md-sidenav{
+  margin-top: 5%;
+}
 /* form style */
 .login {
   margin-top: 4em;

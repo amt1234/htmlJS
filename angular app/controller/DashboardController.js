@@ -5,4 +5,6 @@ app.controller('dashboardController', function($scope, $mdDialog) {
 
   $scope.status = '  ';
   $scope.customFullscreen = false;
+
+  
 });
