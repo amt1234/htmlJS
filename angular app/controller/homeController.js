@@ -1,15 +1,26 @@
 app.controller('homeController', function($scope, $mdSidenav, jsonService, $state) {
-  $scope.toggleLeft = buildToggler('left');
-  $scope.toggleRight = buildToggler('right');
+  $scope.toggleLeft = buildToggler('open');
+  $scope.toggleRight = buildToggler('close');
 
   function buildToggler(componentId) {
     return function() {
       $mdSidenav(componentId).toggle();
     };
   }
+
+  // signout function
   $scope.signout = function() {
     window.location = "templates/Thanku.html";
   };
+
+  // http service
+  $scope.answer = jsonService.dashboardService();
+  $scope.answer
+    .then(function(response) {
+      $scope.answer = response.data;
+      console.log("$scope.answer", $scope.answer);
+    })
+
   //SwitchFuction
   $scope.SwitchFuction = function(answer, selectlist, sno) {
     switch (sno) {
@@ -53,13 +64,7 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
 
   };
 
-  // http service
-  $scope.answer = jsonService.dashboardService();
-  $scope.answer
-    .then(function(response) {
-      $scope.answer = response.data;
-      console.log("$scope.answer", $scope.answer);
-    })
+
 });
 
 // dynamicFilter on checkbox

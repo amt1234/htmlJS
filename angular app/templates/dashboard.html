@@ -1,8 +1,14 @@
-<div ng-cloak>
+<div style='padding-top:5%;' ng-cloak>
   <md-content class="md-padding" flex-offset="15">
-    <span flex-xs flex-gt-xs="300" ng-repeat="spec in answer|dynamicFilter:selectedManufracture:selectedStorage:selectedOS:selectedCamera">
-      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" ng-click="showAdvanced($event,spec)">
+    <span flex="30" flex-gt-xs="400"  ng-repeat="spec in answer|dynamicFilter:selectedManufracture:selectedStorage:selectedOS:selectedCamera">
+  <md-card class="card_content" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" ng-click="showAdvanced($event,spec)">
+    <md-card-title-media>
+      <div class="md-media-lg card-media">
+        <img src="{{spec.image.small}}">
+      </div>
+    </md-card-title-media>
   <md-card-title>
+
   <md-card-title-text>
     <span class="md-headline">{{spec.name}}</span>
     <span class="md-subhead"><b> Manufacturer :</b> {{spec.specs.manufacturer}}</span>
@@ -10,11 +16,7 @@
     <span class="md-subhead"><b> OS :</b>OS {{spec.specs.os}}</span>
     <span class="md-subhead"><b> Camera :</b>Camera {{spec.specs.camera}}</span>
     </md-card-title-text>
-    <md-card-title-media>
-      <div class="md-media-lg card-media">
-        <img src="{{spec.image.small}}">
-      </div>
-    </md-card-title-media>
+
     </md-card-title>
     <md-card-actions layout="row">
       <p>

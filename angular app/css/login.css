@@ -45,7 +45,6 @@ md-input-container.md-icon-float {
 md-input-container ng-messages, md-input-container [ng-messages] {
   padding-left: 36px;
 }
-
 .md-raised md-primary {
   width: 100%;
   margin-top: 40px;
@@ -71,11 +70,19 @@ md-input-container ng-messages, md-input-container [ng-messages] {
 .button:hover{
   background-color: #45a049;
 }
-
+.md-hue-2{
+  position: fixed;
+}
+.md-sidenav-left{
+  position: fixed;
+}
 span {
   display: inline-block;
 }
-
+.card_content {
+    /* padding-left: 10px; */
+    height: 225*400;
+}
 .dialogdemoThemeInheritance .container {
   text-align: center; }
 
