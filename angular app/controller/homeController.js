@@ -7,7 +7,9 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
       $mdSidenav(componentId).toggle();
     };
   }
-
+  $scope.signout = function() {
+    window.location = "templates/Thanku.html";
+  };
   //SwitchFuction
   $scope.SwitchFuction = function(answer, selectlist, sno) {
     switch (sno) {
@@ -58,9 +60,6 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
       $scope.answer = response.data;
       console.log("$scope.answer", $scope.answer);
     })
-  // $scope.dashboard = function() {
-  //   $state.go('dashboard');
-  // }
 });
 
 // dynamicFilter on checkbox
