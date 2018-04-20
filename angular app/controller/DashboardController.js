@@ -20,5 +20,8 @@ app.controller('dashboardController', function($scope, $mdDialog) {
 function DialogController($scope, $mdDialog,item) {
   $scope.data = item;
   console.log(item);
+  $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
 }
 });

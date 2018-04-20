@@ -1,7 +1,25 @@
 <md-dialog>
-  <form ng-cloak>
-    <div>
-        <img style="margin: auto; max-width: 100%;" alt="mobile" src="{{data.image.large}}">
+  <form ng-cloak class="dialog">
+    <div class="image-wrapper">
+        <!-- <img style="margin: auto; max-width: 100%;" src="{{data.image.large}}"  alt="mobile" > -->
+          <img style=" margin:center center;max-width: 100%;" src="{{data.image.large}}"  alt="mobile" >
+
+      <md-content class="text-muted image-description">
+      <h3>Description:</h3>{{data.description}}
+      <h4>Rating:</h4>{{data.rating}}
+      </md-content>
       </div>
+      <md-card-actions layout="row" layout-align="end center" ng-click="cancel()">
+        <md-button> Close </md-button>
+      </md-card-actions>
   </form>
 </md-dialog>
+<!-- <div class="modal-body">
+     <div class="image-wrapper">
+        <a ng-href="{{ImageSrc}}" target="_blank">
+           <img ng-src={{ImageSrc}}>
+        </a>
+     </div>
+     <div class="text-muted image-description">{{ImageDescription}}
+     </div>
+ </div> -->

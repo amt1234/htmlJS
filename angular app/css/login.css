@@ -63,7 +63,11 @@ md-input-container ng-messages, md-input-container [ng-messages] {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.dialog{
+    margin: auto;
+    background: #ccddff;
+    width:900px;
+}
 .button:hover{
   background-color: #45a049;
 }
@@ -71,10 +75,20 @@ md-input-container ng-messages, md-input-container [ng-messages] {
 span {
   display: inline-block;
 }
-.dialog box{
-  margin: auto;
-}
+
 .dialogdemoThemeInheritance .container {
   text-align: center; }
 
 md-input-container>span {}
+
+  .modalImage .image-wrapper {
+   text-align: center;
+ }
+.modalImage .image-wrapper img {
+   max-width: 560px;
+   max-height: 560px;
+}
+.modalImage .image-description {
+  text-align: center;
+  margin-top: 10px;
+}
