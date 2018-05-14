@@ -3,25 +3,28 @@
     <h1>Login</h1>
     <!-- login form-->
     <form name="clientLogin">
+
       <!--Email id validation  -->
       <md-input-container md-no-float>
         <span>  <i class="material-icons">&#xE853;</i></span>
         <span>  <input ng-model="user.name" name="userName" type="email" placeholder="Email Id" ng-required="true"></span>
-        <div ng-messages="clientLogin.userName.$error">
-          <div ng-message="required">Your valid email id is required[eg.abc@gmail.com].</div>
-        </div>
+          <span ng-show="clientLogin.userName.$error.required">Email is required.</span>
+          <span ng-show="clientLogin.userName.$error.email">Invalid email address.</span>
+
       </md-input-container>
+
       <!--Password validation -->
       <md-input-container md-no-float>
         <span>  <i class="material-icons">&#xE0DA;</i></span>
         <span>  <input ng-model="user.password" type="password" placeholder="Password" ng-required="true" name="userPassword"></span>
-        <div ng-messages="clientLogin.userPassword.$error">
-          <div ng-message="required">Your password is required.</div>
-        </div>
+        <span style="color:red" ng-show="clientLogin.userPassword.$dirty && clientLogin.userPassword.$invalid">
+<span ng-show="clientLogin.userPassword.$error.required">Password is required.</span>
+</span>
       </md-input-container>
+
       <!--Login button-->
       <div class="button">
-        <button type="button" name="button" ng-click="login()">Login</button>
+        <md-button type="submit" name="button" ng-disabled="clientLogin.userName.$invalid && clientLogin.userPassword.$invalid" ng-click="login()">Login</button>
       </div>
     </form>
   </div>

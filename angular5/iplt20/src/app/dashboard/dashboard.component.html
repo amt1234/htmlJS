@@ -1,0 +1,12 @@
+<div class="d-flex-card">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" >
+    <mat-card class="example-card" *ngFor='let team of teamData;let i=index;' fxFlex="21">
+      <mat-card-header>{{team.team_name}} </mat-card-header>
+      <img mat-card-image src="./assets/{{team.team_img_url}}" alt="dd">
+      <mat-card-actions>
+        <!--<a href="#" class="button">View Team Info</a>-->
+        <a [routerLink]='["/team-info",i+1]' class="button">View Team Info</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

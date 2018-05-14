@@ -1,4 +1,4 @@
-app.controller('homeController', function($scope, $mdSidenav, jsonService, $state) {
+app.controller('homeController', function($scope, $state, $mdSidenav, jsonService) {
   $scope.toggleLeft = buildToggler('open');
   $scope.toggleRight = buildToggler('close');
 
@@ -7,6 +7,8 @@ app.controller('homeController', function($scope, $mdSidenav, jsonService, $stat
       $mdSidenav(componentId).toggle();
     };
   }
+    //$state function call
+    $state.go('home.dashboard');
 
   // signout function
   $scope.signout = function() {
@@ -179,9 +181,7 @@ app.filter('uniqueString', function() {
           filtered.push(item);
         }
       }
-
     }
-
     return filtered;
   };
 

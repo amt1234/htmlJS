@@ -1,7 +1,8 @@
   app.controller('loginController', function($scope, $state) {
     $scope.user = {
       name: "",
-      password: ""
+      password: "",
+
     }
     //$state function call
     $scope.login = function() {
